@@ -10,6 +10,7 @@
     "format:fix": "prettier --config package.json '**/*.{cjs,js,jsx,ts,tsx,md,json}' --write  --ignore-path .gitignore"
   },
   "dependencies": {
+    "@anywidget/react": "^0.1.0",
     "@anywidget/vite": "^0.2.0",
     "@nitro-bio/sequence-viewers": "^1.1.8",
     "react": "^18.2.0",

@@ -3,11 +3,14 @@ import {
   AriadneSelection,
   SequenceViewer,
 } from "@nitro-bio/sequence-viewers";
+import { useModelState } from "@anywidget/react";
 import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [selection, setSelection] = useState<AriadneSelection | null>(null);
+  const [selection, setSelection] = useModelState<AriadneSelection | null>(
+    "selection",
+  );
   const annotations: Annotation[] = [
     {
       text: "example",
