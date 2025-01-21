@@ -1,49 +1,38 @@
-# callisto_widget
+# anywidget_react_demo
 
-## Installation
+Showcase how to incorporate React component in a jupyter notebook.
 
-```sh
-pip install callisto_widget
-```
+I have been exploring [AnyWidget](https://github.com/manzt/anywidget) and saw some people asked how to use React Component with it.
+I hope this demo could be helpful.
 
-or with [uv](https://github.com/astral-sh/uv):
+### How to run it
 
-```sh
-uv add callisto_widget
-```
+- **Install:**
+  
+  Install all the necessary node modules by running the `npm install` command.
 
-## Development
+  Only need to do this step once. 
 
-We recommend using [uv](https://github.com/astral-sh/uv) for development.
-It will automatically manage virtual environments and dependencies for you.
+- **Convert to ESM:**
+  
+  To convert your react components into ESM files and store them in the `bundle` folder, you can run
+  `npm run build` (which actually runs `./node_modules/.bin/esbuild ./src/widget.tsx --format=esm --outdir=./bundle --bundle`) .
+  
+  Or, `npm run dev` if you want to use the Hot Module Replacement (HMR) in anywidget[dev].
 
-```sh
-uv run jupyter lab example.ipynb
-```
+- **Usage**
 
-Alternatively, create and manage your own virtual environment:
+  ```python
+  import pathlib
+  import anywidget
+  
+  class myWidget(anywidget.AnyWidget):
+      _esm = pathlib.Path("../bundle/widget.js")
+      _css = pathlib.Path("../bundle/widget.css")
+  
+  m = myWidget()
+  ```
 
-```sh
-python -m venv .venv
-source .venv/bin/activate
-pip install -e ".[dev]"
-jupyter lab example.ipynb
-```
+<img height="245" alt="image" src="https://github.com/wangqianwen0418/anywidget_react_demo/assets/19774198/6ce3eb61-d818-41a4-a86d-cabe4cc6ea32">
 
-The widget front-end code bundles it's JavaScript dependencies. After setting up Python,
-make sure to install these dependencies locally:
-
-```sh
-npm install
-```
-
-While developing, you can run the following in a separate terminal to automatically
-rebuild JavaScript as you make changes:
-
-```sh
-npm run dev
-```
-
-Open `example.ipynb` in JupyterLab, VS Code, or your favorite editor
-to start developing. Changes made in `js/` will be reflected
-in the notebook.
+  <img height="245" alt="image" src="https://github.com/wangqianwen0418/anywidget_react_demo/assets/19774198/262b68ad-0683-4308-878c-b41e22635a89">

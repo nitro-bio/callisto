@@ -1,0 +1,8 @@
+/node_modules/
+/dist/
+/callisto.egg-info/
+/callisto/labextension/dist/
+.venv/
+*/__pycache__/
+.ipynb_checkpoints/
+/callisto/__pycache__/
