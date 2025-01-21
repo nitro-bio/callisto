@@ -8,16 +8,16 @@ I hope this demo could be helpful.
 ### How to run it
 
 - **Install:**
-  
+
   Install all the necessary node modules by running the `npm install` command.
 
-  Only need to do this step once. 
+  Only need to do this step once.
 
 - **Convert to ESM:**
-  
+
   To convert your react components into ESM files and store them in the `bundle` folder, you can run
   `npm run build` (which actually runs `./node_modules/.bin/esbuild ./src/widget.tsx --format=esm --outdir=./bundle --bundle`) .
-  
+
   Or, `npm run dev` if you want to use the Hot Module Replacement (HMR) in anywidget[dev].
 
 - **Usage**
@@ -25,11 +25,11 @@ I hope this demo could be helpful.
   ```python
   import pathlib
   import anywidget
-  
+
   class myWidget(anywidget.AnyWidget):
       _esm = pathlib.Path("../bundle/widget.js")
       _css = pathlib.Path("../bundle/widget.css")
-  
+
   m = myWidget()
   ```
 

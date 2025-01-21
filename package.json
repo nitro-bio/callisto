@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "./node_modules/.bin/esbuild ./src/widget.tsx --format=esm --outdir=./bundle --bundle --watch",
-    "build": "./node_modules/.bin/esbuild ./src/widget.tsx --format=esm --outdir=./bundle --bundle"
+    "build": "./node_modules/.bin/esbuild ./src/widget.tsx --format=esm --outdir=./bundle --bundle",
+    "format": "prettier --config package.json '**/*.{cjs,js,jsx,ts,tsx,md,json}' --check ",
+    "format:fix": "prettier --config package.json '**/*.{cjs,js,jsx,ts,tsx,md,json}' --write  --ignore-path .gitignore"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -20,7 +22,14 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.10",
     "typescript": "^5.0.2",
     "vite": "^6.0.11"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }
