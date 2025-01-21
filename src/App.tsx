@@ -8,6 +8,7 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [sequences] = useModelState<string[]>("sequences");
   const [selection, setSelection] = useModelState<AriadneSelection | null>(
     "selection",
   );
@@ -42,11 +43,7 @@ function App() {
   return (
     <div className="flex max-h-[600px] overflow-y-auto">
       <SequenceViewer
-        sequences={[
-          "ATGC".repeat(100),
-          " ".repeat(30) + "ATGC".repeat(20),
-          " ".repeat(80) + "ATGC".repeat(70),
-        ]}
+        sequences={sequences}
         annotations={annotations}
         selection={selection}
         setSelection={setSelection}
