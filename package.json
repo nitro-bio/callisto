@@ -1,15 +1,16 @@
 {
-  "name": "callisto-frontend",
+  "name": "callisto_frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "./node_modules/.bin/esbuild ./src/widget.tsx --format=esm --outdir=./bundle --bundle --watch",
-    "build": "./node_modules/.bin/esbuild ./src/widget.tsx --format=esm --outdir=./bundle --bundle",
+    "dev": "vite build --watch",
+    "build": "vite build",
     "format": "prettier --config package.json '**/*.{cjs,js,jsx,ts,tsx,md,json}' --check ",
     "format:fix": "prettier --config package.json '**/*.{cjs,js,jsx,ts,tsx,md,json}' --write  --ignore-path .gitignore"
   },
   "dependencies": {
+    "@anywidget/vite": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

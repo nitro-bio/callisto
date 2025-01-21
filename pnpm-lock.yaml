@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@anywidget/vite':
+        specifier: ^0.2.0
+        version: 0.2.0(vite@6.0.11)
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -57,6 +60,11 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@anywidget/vite@0.2.0':
+    resolution: {integrity: sha512-WE1WCj47GIjnt4DrMnCgZJQgGGW7IKRvS2W5CGHRXtrhE3GoehN+Z+MBxnrieGUFby7DBbFZxRrXv1sn/DTg0w==}
+    peerDependencies:
+      vite: ^4.0.0 || ^5.0.0
 
   '@babel/code-frame@7.26.2':
     resolution: {integrity: sha512-RJlIHRueQgwWitWgF8OdFYGZX328Ax5BCemNGlqHfplnRT9ESi8JkFlvaVYbS+UubVY6dpv87Fs2u5M29iNFVQ==}
@@ -1190,6 +1198,10 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
+
+  '@anywidget/vite@0.2.0(vite@6.0.11)':
+    dependencies:
+      vite: 6.0.11
 
   '@babel/code-frame@7.26.2':
     dependencies:
