@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import anywidget from "@anywidget/vite";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   build: {
@@ -9,7 +10,7 @@ export default defineConfig({
       formats: ["es"],
     },
   },
-  plugins: [anywidget()],
+  plugins: [anywidget(), tailwindcss()],
   define: {
     "process.env": {},
   },

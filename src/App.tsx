@@ -1,11 +1,9 @@
+import { useModelState } from "@anywidget/react";
 import {
   Annotation,
   AriadneSelection,
   SequenceViewer,
 } from "@nitro-bio/sequence-viewers";
-import { useModelState } from "@anywidget/react";
-import { useState } from "react";
-import "./App.css";
 
 function App() {
   const [sequences] = useModelState<string[]>("sequences");
@@ -32,16 +30,16 @@ function App() {
   ];
   const charClassName = ({ sequenceIdx }: { sequenceIdx: number }) => {
     if (sequenceIdx === 0) {
-      return "text-brand-600";
+      return "dark:text-brand-400 text-brand-600";
     } else if (sequenceIdx === 1) {
-      return "text-indigo-600";
+      return "dark:text-indigo-400 text-indigo-600";
     } else {
-      return "text-amber-600";
+      return "dark:text-amber-400 text-amber-600";
     }
   };
 
   return (
-    <div className="flex max-h-[600px] overflow-y-auto">
+    <div className="flex max-h-[600px] overflow-y-auto dark">
       <SequenceViewer
         sequences={sequences}
         annotations={annotations}
