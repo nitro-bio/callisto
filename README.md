@@ -1,22 +1,25 @@
-# Quickstart
+# Callisto | A Jupyter Widget Example
 
-## install deps
+Read the accompanying [blog post](https://www.nitro.bio/blog/widgets-dev)
 
+## Quickstart
+
+### Install frontend/backend dependencies
 ```
-pnpm i
+pnpm install
 uv venv
 uv pip install -r requirements.txt
-source .venv/source/bin/activate
 ```
 
-start the frontend build
+### Start a frontend build
 
 ```
 pnpm run dev
 ```
 
-start the jupyter notebook
+### Start the jupyter notebook (in a seperate shell)
 
 ```
+source .venv/source/bin/activate
 jupyter lab
 ```
